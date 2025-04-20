@@ -1,0 +1,23 @@
+---
+title: API Authentication
+---
+
+# API Authentication
+
+This guide explains how to authenticate with the Athena API, covering methods like JWT, session management, and the necessary steps for secure access to your Athena services.
+
+## Authentication Overview
+
+Athena uses **JWT (JSON Web Tokens)** for authenticating API requests. Once a user is authenticated, a token is issued and should be included in subsequent API requests.
+
+## Getting Started with Authentication
+
+1. **Create an Account**: Before authenticating via the API, you'll need to create an account. This can be done using the `/auth/register` endpoint, where you'll provide your username, email, and password.
+
+2. **Login**: To authenticate, you need to log in via the `/auth/login` endpoint by providing your username/email and password.
+
+   Example request:
+   ```bash
+   curl -X POST https://your-api.com/auth/login \
+   -d '{"username": "user", "password": "yourpassword"}' \
+   -H "Content-Type: application/json"
